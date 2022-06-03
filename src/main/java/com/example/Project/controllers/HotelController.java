@@ -30,7 +30,7 @@ public class HotelController {
 
     //Supression des hotels
     @DeleteMapping("/delete/{id}")
-    public void deletehotel(@PathVariable  String id) {
+    public void deletehotel(@PathVariable  Integer id) {
         hotelService.deleteHotel(id);
     }
 

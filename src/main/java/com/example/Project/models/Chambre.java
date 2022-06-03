@@ -15,7 +15,7 @@ public class Chambre {
     private Hotel hotel;
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private String id;
+    private int id;
     private int num_chambre;
     private String cin_touriste;
     private String type_chambre;
@@ -30,7 +30,7 @@ public class Chambre {
         this.prix = prix;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 

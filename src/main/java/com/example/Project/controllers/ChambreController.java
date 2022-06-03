@@ -30,23 +30,23 @@ public class ChambreController {
     }
     //supression du chambre
     @DeleteMapping("/deletechambre/{id}")
-    public void deletechambre(@PathVariable String id) {
+    public void deletechambre(@PathVariable Integer id) {
         chambreservice.deleteChambre(id);
     }
 
     //disponibilte des chambres
     @GetMapping("/chambre/{id}")
-    public String disponibiltechambre(@PathVariable String id) {
+    public String disponibiltechambre(@PathVariable Integer id) {
         return chambreservice.dispo(id);
     }
     //la reservation
     @PutMapping("/update/rev/{id}")
-    public void reserverchambre(@PathVariable String id) {
+    public void reserverchambre(@PathVariable Integer id) {
         chambreservice.reserv(id);
     }
     //annulation de reservaion
     @PutMapping("/update/annurev/{id}")
-    public void Annreserverchambre(@PathVariable String id) {
+    public void Annreserverchambre(@PathVariable Integer id) {
         chambreservice.Annreserv(id);
     }
 

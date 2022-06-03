@@ -16,8 +16,8 @@ public class HotelService {
     }
 
 
-    public void deleteHotel(String id) {
-        hotelRepository.deleteById(String.valueOf(id));
+    public void deleteHotel(Integer id) {
+        hotelRepository.deleteById(id);
 
     }
 

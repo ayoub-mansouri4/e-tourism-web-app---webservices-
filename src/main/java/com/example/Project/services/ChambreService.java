@@ -17,8 +17,8 @@ public class ChambreService {
     }
 
 
-    public void deleteChambre(String id) {
-        chambreRepository.deleteById(String.valueOf(id));
+    public void deleteChambre(Integer id) {
+        chambreRepository.deleteById(id);
 
     }
 
@@ -28,8 +28,8 @@ public class ChambreService {
 
     }
 
-    public Chambre reserv(String id) {
-            Chambre chambra=chambreRepository.findById(String.valueOf(id)).orElse(null);
+    public Chambre reserv(Integer id) {
+            Chambre chambra=chambreRepository.findById(id).orElse(null);
             chambra.setEtat_chambre(true);
             return chambreRepository.save(chambra);
 
@@ -37,14 +37,14 @@ public class ChambreService {
 
     }
 
-    public Chambre Annreserv(String id) {
-        Chambre chambra=chambreRepository.findById(String.valueOf(id)).orElse(null);
+    public Chambre Annreserv(Integer id) {
+        Chambre chambra=chambreRepository.findById(id).orElse(null);
         chambra.setEtat_chambre(false);
         return chambreRepository.save(chambra);
     }
 
-    public String dispo(String id) {
-        Chambre chambra=chambreRepository.findById(String.valueOf(id)).orElse(null);
+    public String dispo(Integer id) {
+        Chambre chambra=chambreRepository.findById(id).orElse(null);
         boolean rev=chambra.getEtat_chambre();
         if(rev==false){
             return "Non reservee";

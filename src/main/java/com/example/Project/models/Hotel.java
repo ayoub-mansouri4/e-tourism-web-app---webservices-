@@ -16,7 +16,7 @@ public class Hotel {
     @Id
     @GeneratedValue(generator= "System_uuid")
     @GenericGenerator(name="system-uuid", strategy = "uuid")
-    private String id;
+    private int id;
     private String nom;
     private String lieu;
     private int nbr_chambre;
@@ -32,7 +32,7 @@ public class Hotel {
 
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
