@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="hotel.component.css">
+<div class="container">
+<div class="card">
+  <h3 class="text-center">Liste des hotels </h3>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+      <th> Id </th>
+      <th> Nom </th>
+      <th> Lieu </th>
+      <th> Nombre de chambres </th>
+
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let hotel of hotels">
+        <td> {{hotel.id}}</td>
+        <td> {{hotel.nom}}</td>
+        <td> {{hotel.lieu}}</td>
+        <td> {{hotel.nbr_chambre}}</td>
+          <button (click)="deleteHotel(hotel.id)" class="btn btn-danger">Delete</button>
+
+      </tr>
+      </tbody>
+    </table>
+</div>
+
+
+
+</div>
+
+</div>
