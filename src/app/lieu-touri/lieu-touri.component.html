@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="lieu-touri.component.css">
+<div class="container">
+  <div class="card">
+    <h3 class="text-center">Liste des Lieux Touristiques </h3>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <th> Id </th>
+        <th> Nom </th>
+        <th> Lieu </th>
+
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let lieu of lieux">
+          <td> {{lieu.id}}</td>
+          <td> {{lieu.nom}}</td>
+          <td> {{lieu.lieu}}</td>
+          <button (click)="deleteLieu(lieu.id)" class="btn btn-danger">Delete</button>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+

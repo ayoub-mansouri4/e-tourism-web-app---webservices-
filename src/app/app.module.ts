@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HotelComponent } from './hotel/hotel.component';
+import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LieuTouriComponent } from './lieu-touri/lieu-touri.component';
+import { AddLieuTouriComponent } from './add-lieu-touri/add-lieu-touri.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HotelComponent
+    HotelComponent,
+    AddHotelComponent,
+    LieuTouriComponent,
+    AddLieuTouriComponent
 
   ],
   imports: [

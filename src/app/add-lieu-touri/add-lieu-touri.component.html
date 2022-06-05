@@ -1,19 +1,14 @@
-<h3>Add Hotel</h3>
+<h3>Add Lieu Touri</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Nom</label>
-      <input type="text" class="form-control" id="nom" required [(ngModel)]="hotel.nom" name="nom">
+      <input type="text" class="form-control" id="nom" required [(ngModel)]="lieu.nom" name="nom">
     </div>
 
     <div class="form-group">
       <label for="name">Lieu</label>
-      <input type="text" class="form-control" id="lieu" required [(ngModel)]="hotel.lieu" name="lieu">
-    </div>
-
-    <div class="form-group">
-      <label for="name">Nombre des chambres</label>
-      <input type="number" class="form-control" id="nbr_chambre" required [(ngModel)]="hotel.nbr_chambre" name="nbr_chambre">
+      <input type="text" class="form-control" id="lieu" required [(ngModel)]="lieu.lieu" name="lieu">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>

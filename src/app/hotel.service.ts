@@ -9,6 +9,8 @@ import {Hotel} from './Hotel';
 export class HotelService {
 
   private baseUrl:String="http://localhost:8080/hotels";
+  private baseUrl1:String="http://localhost:8080/delete";
+  private baseUrl2:String="http://localhost:8080/addHotel";
   constructor(private http: HttpClient) {}
 
    getHotels(): Observable<Hotel[]>{
@@ -16,11 +18,11 @@ export class HotelService {
    }
 
    addHotel(Hotel: Object): Observable<Object> {
-       return this.http.post(`${this.baseUrl}`, Hotel);
+       return this.http.post(`${this.baseUrl2}`, Hotel);
      }
 
    deleteHotel(id: number): Observable<any> {
-      return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+      return this.http.delete(`${this.baseUrl1}/${id}`, { responseType: 'text' });
        }
 
 

@@ -42,4 +42,5 @@ export class AddHotelComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/hotels']);
   }
+
 }
