@@ -23,6 +23,7 @@ deleteHotel(id: number) {
     this.hotelService.deleteHotel(id)
       .subscribe(
         data => {
+
           console.log(data);
           this.hotels=data;
         },

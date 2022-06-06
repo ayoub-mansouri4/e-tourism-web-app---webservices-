@@ -308,19 +308,27 @@
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="" class="nav-link" routerLinkActive="active">Hotel List</a>
+      <a routerLink="hotels" class="nav-link" routerLinkActive="active">Hotel List</a>
     </li>
     <li class="nav-item">
-      <a routerLink="add" class="nav-link" routerLinkActive="active">Add Hotel</a>
+      <a routerLink="chambres" class="nav-link" routerLinkActive="active">Chambre List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="lieux" class="nav-link" routerLinkActive="active">Lieux List</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="addHotel" class="nav-link" routerLinkActive="active">Add Hotel</a>
     </li>
     <li class="nav-item">
       <a routerLink="addlieu" class="nav-link" routerLinkActive="active">Add Lieu Touri</a>
     </li>
+
+    <li class="nav-item">
+      <a routerLink="addChambre" class="nav-link" routerLinkActive="active">Add Chambre</a>
+    </li>
   </ul>
 </nav>
 <h1 class="text-center">e-tourisme</h1>
-<head><base href="./"></head>
-<app-hotel></app-hotel>
-<app-add-hotel></app-add-hotel>
-<app-lieu-touri></app-lieu-touri>
-<app-add-lieu-touri></app-add-lieu-touri>
+<router-outlet></router-outlet>
+
+

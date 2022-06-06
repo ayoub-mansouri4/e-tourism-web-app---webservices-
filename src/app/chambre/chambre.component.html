@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="chambre.component.css">
+<div class="container">
+  <div class="card">
+    <h3 class="text-center">Liste des chambres </h3>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <th> Id </th>
+        <th> Numero chambre </th>
+        <th> Cin touriste </th>
+        <th> Type chambre </th>
+        <th> Etat chambre </th>
+        <th> Prix </th>
+        <th> Id Hotel </th>
+        <th> Delete</th>
+        <th> Reserver</th>
+        <th> Annuler Reservation</th>
+        </thead>
+
+        <tbody>
+
+        <tr *ngFor="let chambre of chambres">
+          <td> {{chambre.id}}</td>
+          <td> {{chambre.num_chambre}}</td>
+          <td> {{chambre.cin_touriste}}</td>
+          <td> {{chambre.type_chambre}}</td>
+          <td> {{chambre.etat_chambre}}</td>
+          <td> {{chambre.prix}}</td>
+          <td> {{chambre.hotel_id}}</td>
+
+          <td><button (click)="deleteChambre(chambre.id)" class="btn btn-danger" >Delete</button></td>
+          <td><button (click)="resvChambre(chambre.id)" id="rev" class="btn btn-success" >Reserver</button></td>
+          <td><button (click)="annulresvChambre(chambre.id)" id="ann" class="btn btn-success" >Annuler Reservation</button></td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
