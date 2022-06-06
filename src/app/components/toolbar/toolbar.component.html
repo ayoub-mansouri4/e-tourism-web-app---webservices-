@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-lightd-flex justify-content-between  " style="background-color: rgb(255, 255, 255); box-shadow: 2px 2px 20px 1px gray;">
+    <a class="navbar-brand"  routerLink="/homeTransport" style="color: rgb(0, 0, 0);font-weight: bold;">Espace Gérant </a>
+
+
+
+    <div class="d-flex justify-content-end" style="width: 90%;">
+
+    <div  class="item">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto " >
+        <li class="nav-item  ">
+            <div class="btn-group">
+                <button type="button" class="btn btn-light">Action</button>
+                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" routerLink="/addTransport">Ajouter Transport(Voyage)</a>
+                  <a class="dropdown-item" routerLink="/deleteTransport">Supprimer Transport(Voyage)</a>
+                </div>
+              </div>
+        </li>
+      </ul>
+    </div>
+</div>
+
+<a type="button" (close)="ngOnInit()" class="btn btn-light item" routerLink="/validateReserv">
+    Demande de réservation <span class="badge badge-info">{{placesNonValidees.length}}</span>
+</a>
+<a type="button" class="btn btn-light item" routerLink="/cancelReserv">
+    Annulation de réservation <span class="badge badge-danger">{{placesAnnulees.length}}</span>
+</a>
+  <button type="button" class="btn btn-outline-secondary" >Se deconnecter</button>
+
+</div>
+  </nav>

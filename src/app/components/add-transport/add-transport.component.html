@@ -1,0 +1,113 @@
+<div id="form" class="w-100" style="height: 80vh;margin-top: 1%;" >
+    <div class="row mb-4" id="1" class="d-flex w-100">
+      <div class="col w-25" >
+        <img style="height: 90%;" src="https://ustravel.ro/images/index/aboutright.png">
+      </div>
+      <div class="col w-75" >
+  <form  style="font-family: Arial, Helvetica, sans-serif;font-weight: bold;" class="w-100">
+      <div class="row mb-4">
+      <div class="col">
+        <div class="form-group">
+            <label for="4">Type de Transport :</label>
+            <select class="form-control" id="4" name="type"  [(ngModel)]="transport.type">
+              <option value="Train">Train</option>
+              <option value="Vol">Vol</option>
+              <option value="Bus">Bus</option>
+              <option value="Grand_taxi">Grand taxi</option>
+              <option value="Petit_taxi">Petit taxi</option>
+            </select>
+        </div>
+
+        
+
+
+              <div class="form-group">
+                  <label for="100">Lieu de départ:</label>
+                  <select class="form-control" id="100" name="lieu_depart" [(ngModel)]="transport.lieu_depart">
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Rabat">Rabat</option>
+                    <option value="Agadir">Agadir</option>
+                    <option value="Marrakech">Marrakech</option>
+                    <option value="Salé">Salé</option>
+                    <option value="Oujdai">Oujda</option>
+                    <option value="Meknès">Meknès</option>
+                    <option value="Kénitra">	Kénitra</option>
+                    <option value="Tétouan">Tétouan</option>
+                    <option value="Safi">Safi</option>
+                    <option value="Tétouani">Tétouan</option>
+
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <label for="400">Lieu d'arrivée:</label>
+                <select class="form-control" id="400" name="lieu_arrive" [(ngModel)]="transport.lieu_arrive">
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Rabat">Rabat</option>
+                    <option value="Agadir">Agadir</option>
+                    <option value="Marrakech">Marrakech</option>
+                    <option value="Salé">Salé</option>
+                    <option value="Oujdai">Oujda</option>
+                    <option value="Meknès">Meknès</option>
+                    <option value="Kénitra">	Kénitra</option>
+                    <option value="Tétouan">Tétouan</option>
+                    <option value="Safi">Safi</option>
+                    <option value="Tétouani">Tétouan</option>
+                  </select>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <div >
+                   <p class="text-dark">Nombre des Places</p>
+                </div>
+                <div class="input-group w-auto justify-content-end align-items-center">
+                   <input type="button"  (click)="decrement_nbr_places()" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 " data-field="quantity">
+                  
+                   <input type="number"  style="font-weight: bold;" min="1" step="1"[value]="i" name="nbr_places" [(ngModel)]="i" name="quantity" class="quantity-field border-0 text-center w-25 ">
+               
+                   <input type="button"  (click)="increment_nbr_places()" value="+" class="button-plus border rounded-circle icon-shape icon-sm " data-field="quantity">
+                </div>
+             </div>
+          
+  
+  
+    
+  
+      
+  </div>
+  <div class="col">
+        <label class="form-label" for="1">Date et temps de depart:</label>
+     <div class="row mb-4" id="1">
+      <div class="col" >
+        <div class="form-outline">
+          <input type="date"  class="form-control" name="date_depart"  [(ngModel)]="transport.date_depart"/>
+        </div>
+      </div>
+      <div class="col" style="margin-top: 2%;">
+        <div class="form-outline">
+          <input type="time" class="form-control" name="temps_depart" [(ngModel)]="transport.temps_depart"/>
+        </div>
+      </div>
+    </div>
+  
+
+     <label class="form-label" for="3">Prix(DH):</label>
+     <div class="row mb-4" id="3">
+      <div class="col">
+          <div class="form-outline">
+            <input type="number"   step="0.01" class="form-control" placeholder="00.00" name="prix" [(ngModel)]="transport.prix" />
+          </div>
+        </div>
+   
+    </div>
+  </div></div>
+
+      <button class="btn btn-primary w-25 mb-4"  (click)="ajouterTransport()">Ajouter un voyage</button>
+    </form>
+    </div>
+    
+  </div>
+  
+    
+  </div>
+
