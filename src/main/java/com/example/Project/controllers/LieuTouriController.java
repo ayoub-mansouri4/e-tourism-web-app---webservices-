@@ -6,25 +6,25 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @AllArgsConstructor
 public class LieuTouriController {
     private final LieuTouriService lieuService;
-    //Ajout des hotels
+    //Ajout des lieux
 
     @PostMapping("/addlieu")
-    public LieuTouri addhotel(@RequestBody LieuTouri lieu){
+    public LieuTouri addlieu(@RequestBody LieuTouri lieu){
         return lieuService.saveLieu(lieu);
     }
-    //Affichage des hotels
+    //Affichage des lieux
 
     @GetMapping("/lieux")
     public List<LieuTouri> findAlllieux() {
         return lieuService.getLieu();
     }
 
-    //Supression des hotels
+    //Supression des lieux
     @DeleteMapping("/deletelieu/{id}")
     public void deletelieu(@PathVariable  Integer id) {
         lieuService.deleteLieu(id);

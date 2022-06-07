@@ -1,6 +1,5 @@
 package com.example.Project.models;
 
-import com.example.Project.models.Chambre;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
