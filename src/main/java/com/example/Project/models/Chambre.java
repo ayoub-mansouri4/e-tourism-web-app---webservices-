@@ -6,21 +6,21 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@Entity
+@Entity(name = "chambre")
 @Table
 @NoArgsConstructor
 public class Chambre {
-    @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+    private int hotel_id;
     private int num_chambre;
     private String cin_touriste;
     private String type_chambre;
     private boolean etat_chambre;
     private int prix;
+
 
     public Chambre(int num_chambre, String cin_touriste, String type_chambre, boolean etat_chambre, int prix) {
         this.num_chambre = num_chambre;
@@ -28,6 +28,7 @@ public class Chambre {
         this.type_chambre = type_chambre;
         this.etat_chambre = etat_chambre;
         this.prix = prix;
+
     }
 
     public Integer getId() {

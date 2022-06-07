@@ -16,6 +16,9 @@ public class ChambreService {
         return chambreRepository.findAll();
     }
 
+    public void getChambresHotl(Integer hotel_id){
+
+    }
 
     public void deleteChambre(Integer id) {
         chambreRepository.deleteById(id);
@@ -27,22 +30,6 @@ public class ChambreService {
         return save;
 
     }
-
-    public Chambre reserv(Integer id) {
-            Chambre chambra=chambreRepository.findById(id).orElse(null);
-            chambra.setEtat_chambre(true);
-            return chambreRepository.save(chambra);
-
-
-
-    }
-
-    public Chambre Annreserv(Integer id) {
-        Chambre chambra=chambreRepository.findById(id).orElse(null);
-        chambra.setEtat_chambre(false);
-        return chambreRepository.save(chambra);
-    }
-
     public String dispo(Integer id) {
         Chambre chambra=chambreRepository.findById(id).orElse(null);
         boolean rev=chambra.getEtat_chambre();
@@ -51,5 +38,36 @@ public class ChambreService {
         }else{
             return "reservee";
         }
+    }
+    public String reserv(Integer id) {
+            if(dispo(id)=="Non reservee"){
+            Chambre chambra=chambreRepository.findById(id).orElse(null);
+            chambra.setEtat_chambre(true);
+            chambreRepository.save(chambra);
+            return "Reservation faite";}
+            else{
+                return "Chambre deja reservee";
+            }
+
+
+
+    }
+
+    public String Annreserv(Integer id) {
+        if(dispo(id)=="reservee"){
+        Chambre chambra=chambreRepository.findById(id).orElse(null);
+        chambra.setEtat_chambre(false);
+        chambra.setCin_touriste("");
+        chambreRepository.save(chambra);
+        return "Annulation faite";
+    }
+        else{
+            return "Chambre non reservee";
+        }
+
+}
+
+    public List<String> getChambresHotel(Integer id) {
+         return chambreRepository.findchambrebyhotel(id);
     }
 }

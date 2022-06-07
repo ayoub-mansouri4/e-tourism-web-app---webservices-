@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 @Data
 @Entity
-@Table
+@Table(name = "hotels")
 @NoArgsConstructor
 
 public class Hotel {
@@ -20,8 +20,6 @@ public class Hotel {
     private String nom;
     private String lieu;
     private int nbr_chambre;
-    @OneToMany(targetEntity=Chambre.class, mappedBy="hotel", fetch=FetchType.EAGER)
-    private List<Chambre> list_chambres;
 
 
 

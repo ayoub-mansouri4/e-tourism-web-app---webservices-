@@ -2,14 +2,12 @@ package com.example.Project.controllers;
 
 
 import com.example.Project.models.Chambre;
-import com.example.Project.models.Hotel;
-import com.example.Project.repositories.ChambreRepository;
 import com.example.Project.services.ChambreService;
-import com.example.Project.services.HotelService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins = "http://localhost:4200")
 
 @RestController
 @AllArgsConstructor
@@ -50,7 +48,11 @@ public class ChambreController {
         chambreservice.Annreserv(id);
     }
 
+    @GetMapping("/chambres/{id}")
+    public List<String> findAllChambresHotel(@PathVariable Integer id) {
+        return chambreservice.getChambresHotel(id);
 
+    }
 
 
 }
