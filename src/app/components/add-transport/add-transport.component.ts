@@ -15,6 +15,9 @@ export class AddTransportComponent implements OnInit {
   constructor(private transportService:TransportService,private router:Router ) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('email')==undefined){
+      this.router.navigate(["/login"])
+    }
   }
 
 

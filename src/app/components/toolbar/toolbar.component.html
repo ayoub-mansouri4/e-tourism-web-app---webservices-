@@ -3,7 +3,7 @@
 
 
 
-    <div class="d-flex justify-content-end" style="width: 90%;">
+    <div *ngIf="loginService.selectEmail()" class="d-flex justify-content-end" style="width: 90%;">
 
     <div  class="item">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,13 +27,13 @@
     </div>
 </div>
 
-<a type="button" (close)="ngOnInit()" class="btn btn-light item" routerLink="/validateReserv">
+<a type="button" (click)="ngOnInit()" class="btn btn-light item" routerLink="/validateReserv">
     Demande de réservation <span class="badge badge-info">{{placesNonValidees.length}}</span>
 </a>
-<a type="button" class="btn btn-light item" routerLink="/cancelReserv">
+<a type="button"  (click)="ngOnInit()"class="btn btn-light item" routerLink="/cancelReserv">
     Annulation de réservation <span class="badge badge-danger">{{placesAnnulees.length}}</span>
 </a>
-  <button type="button" class="btn btn-outline-secondary" >Se deconnecter</button>
+  <button type="button" class="btn btn-outline-secondary"  (click)="loginService.logout()">Se deconnecter</button>
 
 </div>
   </nav>

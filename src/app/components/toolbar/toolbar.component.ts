@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlaceReservee } from 'src/app/models/PlaceReservee';
+import { LoginService } from 'src/app/services/login.service';
 import { TransportService } from 'src/app/services/transport.service';
 
 @Component({
@@ -13,15 +14,21 @@ export class ToolbarComponent implements OnInit {
 
   public placesNonValidees!:PlaceReservee[];
   public placesAnnulees!:PlaceReservee[];
+  public estConnectee:boolean=false;
 
   public n1!:number;
   public n2!:number;
 
 
-  constructor(private transportService:TransportService,private router:Router) { }
+  constructor(private transportService:TransportService,private router:Router,public loginService:LoginService) { }
 
 
   ngOnInit(): void {
+    if(sessionStorage.getItem("email")!=undefined){
+      this.estConnectee=true
+     
+    }
+    //----------------------------
     this.transportService.placesReservees(0).subscribe(
       (resp:PlaceReservee[])=>{
         this.placesNonValidees=resp;

@@ -14,6 +14,9 @@ export class ValiderReservationComponent implements OnInit {
   constructor(private transportService:TransportService,private router:Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('email')==undefined){
+      this.router.navigate(["/login"])
+    }
     this.transportService.placesReservees(0).subscribe(
       (resp:PlaceReservee[])=>{
         this.placesNonValidees=resp;

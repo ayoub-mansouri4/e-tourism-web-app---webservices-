@@ -12,6 +12,9 @@ import { DeleteTransportComponent } from './components/delete-transport/delete-t
 import { TransportItemComponent } from './components/transport-item/transport-item.component';
 import { ValiderReservationComponent } from './components/valider-reservation/valider-reservation.component';
 import { AnuulerReservationComponent } from './components/anuuler-reservation/anuuler-reservation.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginService } from './services/login.service';
+import { TransportService } from './services/transport.service';
 
 
 @NgModule({
@@ -24,6 +27,7 @@ import { AnuulerReservationComponent } from './components/anuuler-reservation/an
     TransportItemComponent,
     ValiderReservationComponent,
     AnuulerReservationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { AnuulerReservationComponent } from './components/anuuler-reservation/an
     
 
   ],
-  providers: [],
+  providers: [LoginService,TransportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

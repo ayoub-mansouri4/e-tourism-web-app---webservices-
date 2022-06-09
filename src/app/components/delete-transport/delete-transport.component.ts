@@ -15,6 +15,9 @@ export class DeleteTransportComponent implements OnInit {
   constructor(private transportService:TransportService,private router:Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('email')==undefined){
+      this.router.navigate(["/login"])
+    }
     this.transportService.getAllTrans().subscribe(
       (resp:Transport[])=>{this.transports=resp},(err:HttpErrorResponse)=>{
         console.log(err);

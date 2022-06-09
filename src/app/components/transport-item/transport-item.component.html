@@ -1,14 +1,16 @@
 <div class="card " style="width: 18rem;" [ngSwitch]="transport.type" >
-    
-    <img  *ngSwitchCase="'Vol'" class="card-img-top" [src]="images.Vol" alt="Card image cap">
-    <img  *ngSwitchCase="'Bus'" class="card-img-top" [src]="images.Bus" alt="Card image cap">
-    <img *ngSwitchCase="'Train'" class="card-img-top" [src]="images.Train" alt="Card image cap">
-    <img *ngSwitchCase="'Grand_taxi'" class="card-img-top" [src]="images.Grand_taxi" alt="Card image cap">
-    <img *ngSwitchCase="'Petit_taxi'" class="card-img-top" [src]="images.Petit_taxi" alt="Card image cap">
+
+  <div style="height:140px">
+    <img  *ngSwitchCase="'Vol'" class="card-img-top h-100" [src]="images.Vol" alt="Card image cap">
+    <img  *ngSwitchCase="'Bus'" class="card-img-top h-100" [src]="images.Bus" alt="Card image cap">
+    <img *ngSwitchCase="'Train'" class="card-img-top h-100" [src]="images.Train" alt="Card image cap">
+    <img *ngSwitchCase="'Grand_taxi'" class="card-img-top h-100" [src]="images.Grand_taxi" alt="Card image cap">
+    <img *ngSwitchCase="'Petit_taxi'" class="card-img-top h-100" [src]="images.Petit_taxi" alt="Card image cap">
+  </div>
 
       <ul class="list-group list-group-flush">
          
-        <li class="list-group-item">Type : {{transport.type}}  - transport : N°{{transport.id_transport}}</li>
+        <li class="list-group-item">{{transport.type}}  : N°{{transport.id_transport}}</li>
         <li class="list-group-item">Lieu de  départ : {{transport.lieu_depart}}</li>
         <li class="list-group-item">Lieu de  d'arrivée: {{transport.lieu_arrive}}</li>
         <li class="list-group-item">Date et temps de départ : {{transport.date_depart}} - {{transport.temps_depart}}</li>

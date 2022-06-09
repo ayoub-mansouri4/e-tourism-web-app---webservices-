@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  urlWsTransport:"http://localhost:8081"
+  urlWsTransport:"http://localhost:8081",
+  urlTouristeClient:"http://localhost:4201",
+  urlGerantServer:"http://localhost:8082"
 
 };
 

@@ -3,7 +3,7 @@
     <div *ngFor="let p of  placesAnnulees" class="col-3" >
         <div class="card d-flex flex-row  col " style="width: 18rem;margin-top: 1%;">
             <ul class="list-group list-group-flush p-2">
-              <li class="list-group-item">Transport : N°{{p.transport.id_transport}}</li>
+              <li class="list-group-item">{{p.transport.type}} : N°{{p.transport.id_transport}}</li>
               <li class="list-group-item">Cin utilisateur : {{p.cin_user}}</li>
               <li class="list-group-item">
                 <button (click)="annulerReservation(p.transport.id_transport,p.cin_user)"  type="button" class="btn btn-danger">Annuler</button>

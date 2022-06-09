@@ -16,6 +16,9 @@ export class AnuulerReservationComponent implements OnInit {
   constructor(private transportService:TransportService,private router:Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('email')==undefined){
+      this.router.navigate(["/login"])
+    }
     this.transportService.getReservationsAnnulees().subscribe(
       (resp:PlaceReservee[])=>{
         this.placesAnnulees=resp;
