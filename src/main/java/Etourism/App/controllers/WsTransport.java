@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/transport")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200","http://localhost:4201"})
 public class WsTransport {
     @Autowired
     GererTransport gererTransport;
@@ -40,7 +40,6 @@ public class WsTransport {
 
     @PostMapping("/addTrans")
     public ResponseEntity<Transport> Ajouter(@RequestBody Transport transport){
-
         return new ResponseEntity<Transport>(gererTransport.ajouterTransport(transport),HttpStatus.OK);
    }
 
@@ -69,5 +68,30 @@ public class WsTransport {
     public void annulerReservatio(@PathVariable("id_transport") Long id_transport,@PathVariable("cin_user") String cin_user){
         reservationTransport.annulerReservation(cin_user,id_transport);
     }
+    @GetMapping("/etatReservationTouriste/{id_transport}/{cin_user}")
+    public boolean estReservee(@PathVariable("id_transport") Long id_transport, @PathVariable("cin_user") String cin_user){
+         PlaceReservee placeReservee=reservationTransport.findPlaceReservee(cin_user,id_transport);
+         if(placeReservee!=null) return  true;
+        return false;
+    }
+
+    @GetMapping("/mesReservations/{cin_user}")
+    public ResponseEntity<List<PlaceReservee>> mes_reservations(@PathVariable("cin_user") String cin_user){
+       return  new ResponseEntity<List<PlaceReservee>>(reservationRepository.findPlaceReserveesByCin_user(cin_user),HttpStatus.OK);
+    }
+
+    @GetMapping("/chercher")
+    public ResponseEntity<List<Transport>> chercher(@RequestParam(value = "lieu_depart",required = false) String lieu_depart,
+                                                    @RequestParam(value = "type",required = false) String type,
+                                                    @RequestParam(value = "date_depart",required = false) String date_depart,
+                                                    @RequestParam(value = "prix",required = false) int prix){
+       List<Transport> transports=transportRepository.findTransportByLieu_departOrTypeOrDate_departOrPrixLessThanEqual(lieu_depart,type,date_depart,prix);
+       return new ResponseEntity<List<Transport>>(transports,HttpStatus.OK);
+    }
+
+
+
+
+
 
 }

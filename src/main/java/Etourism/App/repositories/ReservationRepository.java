@@ -14,8 +14,6 @@ import java.util.Optional;
 public interface ReservationRepository extends JpaRepository<PlaceReservee,Long> {
     public List<PlaceReservee> findPlaceReserveesByEstValidee(boolean estValidee);
     public List<PlaceReservee> findPlaceReserveesByEstAnnulee(boolean estAnnulee);
-
-
-
-
+    @Query("select p from PlaceReservee p where p.cin_user=?1")
+    public List<PlaceReservee> findPlaceReserveesByCin_user(String cin_user);
 }

@@ -61,6 +61,8 @@ public class ReservationTransport implements ReservationTransportInterface{
     public void annulerReservation(String cin_user, Long id_transport) {
         PlaceReservee placeReservee  = findPlaceReservee(cin_user,id_transport);
         if(placeReservee!=null){
+            Transport transport=transportRepository.findById(id_transport).get();
+            transport.setNbr_places_reservees(1-transport.getNbr_places_reservees());
             reservationRepository.deleteById(placeReservee.getId());
         };
     }
@@ -73,7 +75,7 @@ public class ReservationTransport implements ReservationTransportInterface{
     @Override
     public PlaceReservee demandeAnnulation(String cin_user, Long id_transport, boolean statut_annulation) {
         PlaceReservee placeReservee  = findPlaceReservee(cin_user,id_transport);
-        if(placeReservee!=null) return null;
+        if(placeReservee==null) return null;
         placeReservee.setEstAnnulee(statut_annulation);
         return reservationRepository.save(placeReservee);
     }
