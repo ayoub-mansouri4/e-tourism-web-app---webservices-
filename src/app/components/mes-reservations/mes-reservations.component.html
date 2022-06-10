@@ -1,0 +1,58 @@
+<div class="row" style="margin-top: 1%;width: 100%;">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive project-list">
+            <table class="table project-table table-centered table-nowrap">
+              <thead>
+              <tr style="text-align: center;">
+                <th scope="col">Tansport</th>
+                <th scope="col">Lieu de départ</th>
+                <th scope="col">Lieu d'arrivée</th>
+                <th scope="col">Nombre des places reservées</th>
+                <th scope="col">Date et temps de depart</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Etat</th>
+
+              </tr>
+              </thead>
+              <tbody>
+
+              <tr *ngFor="let reservation of mesReservations " style="text-align: center;">
+                <td>{{reservation.transport.type}} : N°{{reservation.transport.id_transport}}</td>
+                <td>{{reservation.transport.lieu_depart}}</td>
+                <td>{{reservation.transport.lieu_arrive}}</td>
+                <td >{{reservation.transport.nbr_places_reservees}}/<span style="color:green;font-weight: bold;">{{reservation.transport.nbr_places}}</span></td>
+                <td>{{reservation.transport.date_depart}} {{reservation.transport.temps_depart}}</td>
+                <td>{{reservation.transport.prix}} DH</td>
+                <td style="font-weight: bold;">{{(reservation.estValidee==false)? "non validé":"validé"}} </td>
+
+
+                <td><button type="button"  [disabled]="reservation.estAnnulee"  (click)="annulerReserv(reservation.transport.id_transport,reservation.cin_user)" class="btn btn-danger">annuler</button>
+                  </td>
+               
+                <!-- <td>
+                  <p class="mb-0">Progress<span class="float-right">{{(reservation.transport.date_depart*100)/eventDetails.event.number_participants}}%</span></p>
+
+                  <div class="progress mt-2" style="height: 5px;">
+                    <div class="progress-bar bg-success" role="progressbar" [style.width]="(eventDetails.participants.length*100)/eventDetails.event.number_participants+'%'" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </td> -->
+
+
+               
+               
+              </tr>
+
+
+              </tbody>
+            </table>
+
+  
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+<section class="container" style="margin-top: 6%;">
+    <div class="row" style="width: 100%">
+        <div class="col" >
+          <img style="width: 350px;height: 350px;" src="https://img.freepik.com/vecteurs-libre/femme-touriste-carte-globale-sac-dos_24877-53458.jpg" class="img-fluid" alt="Phone image">
+        </div>
+
+        <div class="col">        
+            <div class="form-outline mb-4 container">
+                <div class="row">
+                    <input type="text" [(ngModel)]="user.firstName" name="firstName" placeholder="Prénom"class="form-control form-control-lg col" required/>
+                    <input type="text" [(ngModel)]="user.lastName"  name="lastName" placeholder="Nom" class="form-control form-control-lg col" required/>
+                </div>  
+            </div>
+
+            <div class="form-outline mb-4 container">
+                <div class="row">
+                    <input type="text" [(ngModel)]="user.age" name="age" placeholder="age"class="form-control form-control-lg col" required/>
+                    <input type="text" [(ngModel)]="user.cin_user"  name="cin_user" placeholder="cin" class="form-control form-control-lg col" required/>
+                </div>  
+            </div>
+        
+
+       
+            <div class="form-outline mb-4">
+                <input type="email" [(ngModel)]="user.email" name="email" placeholder="Email" class="form-control form-control-lg" required/>
+            </div>
+  
+           
+            <div class="form-outline mb-4 container">
+            <div class="row">
+                <input type="password" [(ngModel)]="user.password" name="password" placeholder="Mot de passe" class="form-control form-control-lg col" required/>
+                <input type="password" [(ngModel)]="ConfirmedPassword" name="ConfirmedPassword" placeholder="Svp confirmer ici" class="form-control form-control-lg col" required/>
+            </div>  
+            </div>
+  
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block"  (click)="register()">S'INSCRIRE</button>
+        </div>
+      </div>
+  </section>

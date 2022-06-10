@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlWsTransport:"http://localhost:8081",
+  urlGerantServer:"http://localhost:8082",
+  urlTouristeServer:"http://localhost:8083"
+
 };
 
 /*

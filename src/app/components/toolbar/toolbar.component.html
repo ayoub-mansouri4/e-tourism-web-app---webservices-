@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-lightd-flex justify-content-between  " style="background-color: rgb(255, 255, 255); box-shadow: 2px 2px 20px 1px gray;">
+    <a class="navbar-brand"  routerLink="/transports" style="color: rgb(0, 0, 0);font-weight: bold;">Touriste </a>
+
+
+
+    <div class="d-flex justify-content-end" style="width: 90%;" *ngIf="authService.selectEmail()">
+<a type="button"  (click)="ngOnInit()"class="btn btn-light item" routerLink="/mesReservations">
+    mes réservations 
+</a>
+<a type="button"  (click)="ngOnInit()"class="btn btn-light item" routerLink="/profil">
+    mon compte
+</a>
+  <button type="button" class="btn btn-outline-secondary" (click)="authService.logoutUser()" >Se deconnecter</button>
+
+</div>
+
+<div class="d-flex justify-content-end" style="width: 90%;" *ngIf="!authService.selectEmail()">
+  <a type="button" class="btn btn-info item" routerLink="/login">
+      se connecter
+  </a>
+  <a type="button"  class="btn btn-info item" routerLink="/register">
+      s'inscrire
+  </a>
+  
+  </div>
+  </nav>

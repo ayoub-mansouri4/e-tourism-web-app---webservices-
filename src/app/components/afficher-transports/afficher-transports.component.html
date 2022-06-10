@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+    <div class="topnav " style="width: 64%;margin: 1% 0;">
+   
+    <div class="item">
+        <div class="form-group">
+            <label for="4" style="font-weight: bold;">Type de Transport </label>
+            <select class="form-control" id="4" name="type"  [(ngModel)]="type">
+              <option value="Train">Train</option>
+              <option value="Vol">Vol</option>
+              <option value="Bus">Bus</option>
+              <option value="Grand_taxi">Grand taxi</option>
+              <option value="Petit_taxi">Petit taxi</option>
+            </select>
+        </div>
+    </div>
+    <div class="item">
+        <div class="form-group">
+            <label for="100"  style="font-weight: bold;">Lieu de départ</label>
+            <select class="form-control" id="100" name="lieu_depart" [(ngModel)]="lieu_depart">
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Sale">Salé</option>
+              <option value="Oujda">Oujda</option>
+              <option value="Meknes">Meknès</option>
+              <option value="Kenitra">	Kénitra</option>
+              <option value="Tetouan">Tétouan</option>
+              <option value="Safi">Safi</option>
+
+            </select>
+        </div>
+    </div>
+    <div class="item">
+        <label class="form-label" for="1" style="font-weight: bold;">Date de depart</label>
+        <input type="date"   id="1" class="form-control" name="date_depart"  [(ngModel)]="date_depart"/>
+        
+    </div>
+    <div div class="item" style="margin-top: 2.5%;">
+        <div class="search-container ">
+            <input type="number" min="0" [step]="0.01"   placeholder="Prix" name="prix" [(ngModel)]="prix">
+            <button type="submit" (click)="chercherTransports()"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+   
+  </div>
+</div>
+<div style="text-align: center; width: 40%;margin: 0 auto 1% auto;">
+    <a class="btn btn-outline-warning btn-lg btn-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Météo
+       </a>
+</div>
+
+<div class="row" style="width: 100%;">
+    <div class="col-3 card" *ngFor="let transport of transports"   >
+       <div class="col">
+        <app-transport-item    [transport]="transport"  [cin_user]="cin_user"  ></app-transport-item>
+       </div>
+    </div>
+</div>

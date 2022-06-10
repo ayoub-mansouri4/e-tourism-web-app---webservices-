@@ -1,0 +1,57 @@
+<div class="card " style="width: 18rem;" [ngSwitch]="transport.type" >
+    
+  <div style="height: 140px;">
+    <img  *ngSwitchCase="'Vol'" class="card-img-top h-100 " [src]="images.Vol" alt="Card image cap">
+    <img  *ngSwitchCase="'Bus'" class="card-img-top   h-100 " [src]="images.Bus" alt="Card image cap">
+    <img *ngSwitchCase="'Train'" class="card-img-top h-100 " [src]="images.Train" alt="Card image cap">
+    <img *ngSwitchCase="'Grand_taxi'" class="card-img-top  h-100" [src]="images.Grand_taxi" alt="Card image cap">
+    <img *ngSwitchCase="'Petit_taxi'" class="card-img-top  h-100" [src]="images.Petit_taxi" alt="Card image cap">
+  </div> 
+ 
+
+      <ul class="list-group list-group-flush">
+         
+        <li class="list-group-item  d-flex justify-content-between">
+          <p>
+            {{transport.type}} : N°{{transport.id_transport}} 
+          </p>
+         
+        </li>
+        <li class="list-group-item">Lieu de  départ : 
+            {{transport.lieu_depart}}
+        </li>
+        <li class="list-group-item">Lieu de  d'arrivée: 
+            {{transport.lieu_arrive}}
+        </li>
+        <li class="list-group-item">Date et temps de départ : {{transport.date_depart}} - {{transport.temps_depart}}</li>
+        <li class="list-group-item">Prix : {{transport.prix}} DH </li>
+        <li class="list-group-item">Nombre de places : {{transport.nbr_places}}
+        </li>
+        <li class="list-group-item">Nombre de places reservées : {{transport.nbr_places_reservees}}</li>
+      </ul>
+      
+      <button  class="btn btn-info" [disabled]="(transport.nbr_places_reservees==transport.nbr_places)||estReservee" (click)="reserver(transport.id_transport,cin_user)">Réserver</button>
+ 
+ 
+     
+     
+   
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <app-meteo [city]="transport.lieu_depart"></app-meteo>
+          <app-meteo [city]="transport.lieu_arrive"></app-meteo>        </div>
+      </div>
+  <div>
+
+
+
+ 
+
+
+ 
+
+ 
+    </div>
+  
+
+ 
